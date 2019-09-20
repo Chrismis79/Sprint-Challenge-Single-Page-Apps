@@ -2,10 +2,14 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import CharacterCard from "./CharacterCard";
+// import SearchForm from "./SearchForm";
 
-export default function CharacterList() {
+function CharacterList(props) {
+
+
   // TODO: Add useState to track data from useEffect
-  const [characters, setCharacters] = useState([]);
+   const [characters, setCharacters] = useState([props]);
+
 
   useEffect(() => {
     // TODO: Add API Request here - must run in `useEffect`
@@ -22,6 +26,7 @@ export default function CharacterList() {
 
   return (
     <section className="character-list">
+      {/* <SearchForm/> */}
       <div>
       {characters.map(item => {
         return <CharacterCard key={item.id} name={item.name} status={item.status} species={item.species}/>
@@ -31,4 +36,4 @@ export default function CharacterList() {
   );
 }
 
-
+export default CharacterList;
