@@ -14,8 +14,9 @@ export default function App() {
       <Header />
       <div>
         <nav>
-          <Link to="/">Home</Link>
-          <Link to="/character-list">Characters</Link>
+          <Link exact to="/">Home</Link>
+          <Link exact to="/character-list">Characters</Link>
+          <Link exact to ="/search-form">Search Characters</Link>
         </nav>
 
         <Route exact path="/" component={WelcomePage}/>
@@ -23,11 +24,11 @@ export default function App() {
           <CharacterList
           {...props}
           items={people} />
-
         )} />
-      </div>
-      <div>
-        <SearchForm />
+        <Route exact path="/search-form" render={props => (
+          <SearchForm/>
+        )}/>
+
       </div>
       
     </main>
