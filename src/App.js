@@ -4,6 +4,7 @@ import {Route, Link} from "react-router-dom";
 
 import WelcomePage from "./components/WelcomePage";
 import CharacterList from "./components/CharacterList";
+import SearchForm from "./components/SearchForm";
 
 
 export default function App() {
@@ -24,6 +25,9 @@ export default function App() {
           items={people} />
 
         )} />
+      </div>
+      <div>
+        <SearchForm />
       </div>
       
     </main>

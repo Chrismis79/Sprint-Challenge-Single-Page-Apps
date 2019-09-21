@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import CharacterCard from "./CharacterCard";
-// import SearchForm from "./SearchForm";
 
-function CharacterList(props) {
+
+function CharacterList() {
 
 
   // TODO: Add useState to track data from useEffect
-   const [characters, setCharacters] = useState([props]);
+   const [characters, setCharacters] = useState([]);
 
 
   useEffect(() => {
@@ -26,10 +26,11 @@ function CharacterList(props) {
 
   return (
     <section className="character-list">
-      {/* <SearchForm/> */}
+         
       <div>
       {characters.map(item => {
-        return <CharacterCard key={item.id} name={item.name} status={item.status} species={item.species}/>
+        return (
+        <CharacterCard key={item.id} name={item.name} status={item.status} species={item.species}/>)
       })}
       </div>
     </section>
